@@ -1,6 +1,6 @@
 # Project Title
 Team 9
-- Leonid Grekhov ()
+- Leonid Grekhov (LeonidGrekhov)
 - Ryan Tran (ryantran2165)
 - Suresh Goud Mula ()
 - Vishal Shinde (vs1682)
