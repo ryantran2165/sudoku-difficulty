@@ -14,6 +14,8 @@ Pizza [@pizza2000identification] is an understudied yet widely utilized implemen
 
 # Introduction
 
+Sudoku puzzles have existed for a very long time and in this keggle competition we are tasked with calculating how difficult some of these puzzles are. The difficulty given by the data set is predetermined by an automated solver that is based on the average search tree depth over 10 attempts. In the provided data set most puzzles contain 23 to 26 clues with the minimum being 19 clues and the maximum 31.
+
 # Methods
 
 # Comparisons
