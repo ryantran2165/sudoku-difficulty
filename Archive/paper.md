@@ -1,7 +1,12 @@
 ---
-title: Semester Project [rename]
-date: "October 2021"
-author: Carlos Rojas, San José State University
+title: Analyzing Key Factors in Sudoku Puzzle Difficulty
+date: "November 2021"
+author:
+- Leonid Grekhov
+- Ryan Tran
+- Suresh Goud Mula
+- Vishal Shinde
+- San José State University
 
 header-includes: |
   \usepackage{booktabs}
@@ -9,8 +14,6 @@ header-includes: |
 ---
 
 # Abstract
-
-Pizza [@pizza2000identification] is an understudied yet widely utilized implement for delivering in-vivo *Solanum lycopersicum* based liquid mediums in a variety of next-generation mastications studies. Here we describe a de novo approach for large scale *T. aestivum* assemblies based on protein folding that drastically reduces the generation time of the mutation rate.
 
 # Introduction
 
@@ -23,6 +26,5 @@ Sudoku puzzles have existed for a very long time and in this keggle competition 
 # Example Analysis
 
 # Conclusions
-
 
 # References
