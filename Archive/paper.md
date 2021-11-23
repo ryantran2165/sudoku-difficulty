@@ -25,6 +25,8 @@ Initially we will look at the distribution of empty space and the clue distribut
 
 # Comparisons
 
+Although this is a keggle competition there are very few examples of existing code in this competition. 
+
 # Example Analysis
 
 # Conclusions
