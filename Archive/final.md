@@ -1,6 +1,6 @@
 ---
 title: Analyzing Key Factors in Sudoku Puzzle Difficulty
-date: "November 2021"
+date: "December 2021"
 author:
   - Leonid Grekhov
   - Ryan Tran
@@ -15,9 +15,17 @@ header-includes: |
 
 # Abstract
 
+&nbsp;&nbsp;&nbsp;&nbsp;
+This paper attempts to analyze the key factors that contribute to the difficulty of Sudoku puzzles using data mining and machine learning techniques.
+Understanding the contributing factors to Sudoku difficulty may lead to a deeper knowledge and understanding of other similar puzzles that may be applied to the real world in the future.
+We applied a variety of machine learning techniques, but unfortunately, as is often the case in real-world problems, our experiments did not produce the results we desired.
+We found that data mining and machine learning techniques were unable to uncover the complex relationship between the puzzles and their difficulties and that this task is better suited for traditional, sudoku-specific algorithms.
+The source code for this paper can be found here: https://github.com/ryantran2165/sudoku-difficulty.
+
 # Introduction
 
-&nbsp;&nbsp;&nbsp;&nbsp;Sudoku, dating all the way back to the 19th century, is one of the world's most famous and popular logic-based puzzles.
+&nbsp;&nbsp;&nbsp;&nbsp;
+Sudoku, dating all the way back to the 19th century, is one of the world's most famous and popular logic-based puzzles.
 The objective in Sudoku is to complete a 9x9 grid of numbers, from one to nine, such that each row, column, and each of the nine 3x3 subgrids contain each digit exactly once.
 The puzzle begins in a partially completed state with pre-filled digits or "clues" as we call them in this paper.
 Sudoku puzzles each have a single unique solution, and the difficulty in finding such a solution varies wildly from absolutely trivial to seemingly impossible.
@@ -35,13 +43,15 @@ More specifically, we will be taking a closer look at how the number of missing 
 
 # Methods
 
-&nbsp;&nbsp;&nbsp;&nbsp;First, we will look at the distribution of the number of clues.
+&nbsp;&nbsp;&nbsp;&nbsp;
+First, we will look at the distribution of the number of clues.
 From Figure 1, we can see that the number of clues is somewhat normally distributed and centered at around 24 clues.
 The vast majority of clues are between 23 and 26.
 
 ![Clues Distribution](./images/clues_distribution.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;Next, we look at the distribution of difficulties.
+&nbsp;&nbsp;&nbsp;&nbsp;
+Next, we look at the distribution of difficulties.
 We notice that the distribution is extremely right skewed due to there being so many samples of 0.0 difficulty, puzzles on the easier spectrum.
 There are over one million samples of 0.0 difficulty, while the next most common difficulty of 1.0 had about 90,000 samples.
 We decided to reduce this discrepancy by randomly sampling 100,000 of the 1,000,000 samples of 0.0 difficulty.
@@ -49,7 +59,8 @@ Though after the reduction, the difficulty distribution is still rather right sk
 
 ![Difficulty Distribution after Sampling](./images/difficulty_distribution_after_reduction.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;Next, we attempt to uncover the relationship between the number of clues and difficulty.
+&nbsp;&nbsp;&nbsp;&nbsp;
+Next, we attempt to uncover the relationship between the number of clues and difficulty.
 As seen in Figure 3, there is not a clear-cut relationship between the number of clues and difficulty.
 We somewhat expected the relationship to clearly indicate that more clues would result in lower difficulty, but the plot says otherwise.
 However, it can be noted that there is something to be said about the relationship between maximum difficulty and the number of clues.
@@ -62,7 +73,8 @@ Thus, it is highly likely that the number of clues alone is not a good predictiv
 
 ![Difficulty vs Clues](./images/difficulty_vs_clues.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;Next, we try to use neural networks to find correlations between the puzzle itself and the difficulty.
+&nbsp;&nbsp;&nbsp;&nbsp;
+Next, we try to use neural networks to find correlations between the puzzle itself and the difficulty.
 There are two approaches to using the puzzle data: numerical and binary.
 The numerical approach is to retain the actual numerical values of the digits in the puzzle.
 The binary approach is to convert all numerical values to the value 1 and all missing places to the value 0.
