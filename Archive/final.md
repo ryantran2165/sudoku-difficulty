@@ -46,6 +46,44 @@ More specifically, we will be taking a closer look at how the number of missing 
 
 # Methods
 
+### Association Analysis
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Association analysis is a method for finding hidden relationships within datasets.
+This is performed through the use of frequent itemsets or through association rules.
+Frequent itemsets are sets of items that occur together often, and association rules indicate the probability of strong relationships between two sets of items.
+This method of analysis is not useful for our problem because even though we are attempting to find a relationship between the puzzle and its difficulty, the notion of itemsets is not applicable.
+
+### Classification
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Classification is a method for assigning discrete classes to items.
+In our case, classification algorithms are not useful because our problem attempts to predict a continuous value, the puzzle difficulty, and not categorize puzzles into different classes.
+
+### Regression
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Regression is a method for predicting continuous numerical values based on dependent variables that have a relationship to the target value.
+Our problem of predicting puzzle difficulty given the incomplete puzzle is this very exact task.
+Therefore, the vast majority of our experiments will be based on regression models.
+
+### Clustering
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Clustering is a method for grouping similar objects into clusters.
+This means we need a metric for determining the similarity of objects. In the context of this problem, it is unclear how one would determine the similarity of Sudoku puzzles.
+Furthermore, this form of unsupervised clustering is not related to our task of predicting a continuous value.
+
+### Dimensionality Reduction
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Dimensionality reduction is a method for reducing the number of features in a dataset such that most of the important meaning and information behind the data is retained.
+Dimensionality reduction helps reduce the curse of dimensionality, which is a phenomenon that causes poor model performance due to the sparsity of the data.
+In our case, the only data we have is the puzzle itself. If we treat each of the 81 numbers as features, then we have an 81-dimensional feature space, which is rather large.
+However, each and every one of the numbers is crucial to the puzzle, so performing dimensionality reduction is not a good idea.
+
+# Experiments and Analysis
+
 ### Clues Distribution
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -98,11 +136,16 @@ It could also be that it is simply not possible to reliably predict difficulty f
 This could very well be the case because from our exploratory data analysis, there was incredible overlap between difficulties with very similar looking puzzles and numbers of clues.
 Nevertheless, we will continue to explore different options for extracting further insights.
 
-# Experiments and Analysis
-Human solving techniques
-There are several techniques available to the average person on how to solve sudoku puzzles. The techniques vary in complexity from the most basic open singles to the x wing technique. The basic open singles technique consists of looking at the open slot in a row column or block and filling it with the missing number between 1 and 9. Through the process of elimination we look for the missing number and check against each block row and column if the number has already been used. Since no number can be used more than once, solving singles is fairly simple. Pencil marks and lone cells is another sudoku solving technique. This is done by writing numbers into squares to remember possible combinations for each square. Once all the possible numbers are exhausted a single number is left over and selected to be written into the open box. All other techniques mostly focus on number elimination rather than solving the puzzle. The simplest technique for number elimination is called hidden singles. This technique focuses on finding values that are only possible in a select block by process of elimination. Naked Pairs, Triples and Quadruples are another technique that is used for number elimination. This refers to the same row, column or block and if these pairs exist they will be eliminated from other blocks. Furthermore, Omission is another popular technique for removing values from blocks based on the existence of those values in the same row or column. The X Wing technique looks at possible solutions corruring exactly twice within a rectangle of possibilities. From this we can eliminate other written in values by saying that they must exist in two of these boxes, and that they can not in other locations. The final technique is a variation on the x wing technique but works on the principle of using 3 pencil marks in 3 rows or columns. 
+### Human Solving Techniques
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+There are several techniques available to the average person on how to solve sudoku puzzles. The techniques vary in complexity from the most basic open singles to the x wing technique. The basic open singles technique consists of looking at the open slot in a row column or block and filling it with the missing number between 1 and 9. Through the process of elimination we look for the missing number and check against each block row and column if the number has already been used. Since no number can be used more than once, solving singles is fairly simple. Pencil marks and lone cells is another sudoku solving technique. This is done by writing numbers into squares to remember possible combinations for each square. Once all the possible numbers are exhausted a single number is left over and selected to be written into the open box. All other techniques mostly focus on number elimination rather than solving the puzzle. The simplest technique for number elimination is called hidden singles. This technique focuses on finding values that are only possible in a select block by process of elimination. Naked Pairs, Triples and Quadruples are another technique that is used for number elimination. This refers to the same row, column or block and if these pairs exist they will be eliminated from other blocks. Furthermore, Omission is another popular technique for removing values from blocks based on the existence of those values in the same row or column. The X Wing technique looks at possible solutions corruring exactly twice within a rectangle of possibilities. From this we can eliminate other written in values by saying that they must exist in two of these boxes, and that they can not in other locations. The final technique is a variation on the x wing technique but works on the principle of using 3 pencil marks in 3 rows or columns.
+
 # Comparisons
+
+&nbsp;&nbsp;&nbsp;&nbsp;
 Unfortunately there was no direct keggle example to compare our experiments against with the same goals. Most related notebooks, of which there were only two, focused on data exploration and solving the sudoku problems rather than tackling the problem of correlating difficulty to each puzzle. The notebooks available for comparison with the same dataset were also partially complete. Stated above are the methods we used to conduct our experiments.
+
 # Conclusion
 
 # References
