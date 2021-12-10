@@ -134,12 +134,15 @@ There could be many reasons why we did not achieve the results we desired.
 It could be that our models are simply not complex enough to capture the true relationship between the puzzle and difficulty.
 It could also be that it is simply not possible to reliably predict difficulty from the puzzles using data mining and machine learning techniques.
 This could very well be the case because from our exploratory data analysis, there was incredible overlap between difficulties with very similar looking puzzles and numbers of clues.
-Nevertheless, we will continue to explore different options for extracting further insights.
 
-### Human Solving Techniques
+### The Missing Insight
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-There are several techniques available to the average person on how to solve sudoku puzzles. The techniques vary in complexity from the most basic open singles to the x wing technique. The basic open singles technique consists of looking at the open slot in a row column or block and filling it with the missing number between 1 and 9. Through the process of elimination we look for the missing number and check against each block row and column if the number has already been used. Since no number can be used more than once, solving singles is fairly simple. Pencil marks and lone cells is another sudoku solving technique. This is done by writing numbers into squares to remember possible combinations for each square. Once all the possible numbers are exhausted a single number is left over and selected to be written into the open box. All other techniques mostly focus on number elimination rather than solving the puzzle. The simplest technique for number elimination is called hidden singles. This technique focuses on finding values that are only possible in a select block by process of elimination. Naked Pairs, Triples and Quadruples are another technique that is used for number elimination. This refers to the same row, column or block and if these pairs exist they will be eliminated from other blocks. Furthermore, Omission is another popular technique for removing values from blocks based on the existence of those values in the same row or column. The X Wing technique looks at possible solutions corruring exactly twice within a rectangle of possibilities. From this we can eliminate other written in values by saying that they must exist in two of these boxes, and that they can not in other locations. The final technique is a variation on the x wing technique but works on the principle of using 3 pencil marks in 3 rows or columns.
+It turns out that the number of clues has very little to do with the difficulty of Sudoku puzzles, and the true key factors are the number of steps required and the technique difficulty of those steps [@ref1]. There are several common techniques to solve Sudoku puzzles, with technique complexity varying greatly from the most basic Open Singles technique to the extremely complicated Swordfish technique. The basic Open Singles technique, as seen in Figure 4, simply looks for a row, column, or block with a single remaining cell and only one option remaining. The advanced Swordfish technique, as seen in Figure 5, comprises of complex deductive reasoning logic and requires attention across multiple blocks. Knowing that techniques as complicated as Swordfish are required to solve certain puzzles, it is no longer surprising that our machine learning models struggled to find a relationship between the puzzle and its difficulty given just the number of clues or the raw puzzle alone.
+
+![Open Singles Technique](./images/open_singles.png)
+
+![Swordfish Technique](./images/swordfish.png)
 
 # Comparisons
 
