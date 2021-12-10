@@ -29,7 +29,8 @@ Sudoku, dating all the way back to the 19th century, is one of the world's most 
 The objective in Sudoku is to complete a 9x9 grid of numbers, from one to nine, such that each row, column, and each of the nine 3x3 subgrids contain each digit exactly once.
 The puzzle begins in a partially completed state with pre-filled digits or "clues" as we call them in this paper.
 Sudoku puzzles each have a single unique solution, and the difficulty in finding such a solution varies wildly from absolutely trivial to seemingly impossible.
-In this paper, we will attempt to analyze and uncover the key factors that determine the difficulty of Sudoku puzzles.
+
+&nbsp;&nbsp;&nbsp;&nbsp;
 We will be using a Kaggle dataset that provides us with three million samples, each with four features: puzzle, solution, clues, and difficulty.
 We are given the puzzle as a string of 81 characters representing the 81 possible grid cells.
 Initial clues are given as their respective numerical digit and unknown values to be discovered are represented with a period character.
@@ -38,10 +39,14 @@ Another possibly useful piece of information is the number of initial clues, whi
 Lastly, we are given the estimated difficulty of the puzzle.
 Sudoku difficulty is not an objective measure, since there are so many different rating systems.
 For this dataset, the difficulty was calculated based on the average depth of search trees over ten attempts.
-In this paper, we will utilize a variety of statistical methods from statistics, data mining, and machine learning to analyze this dataset for insights.
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+In this paper, we will utilize a variety of statistical methods from statistics, data mining, and machine learning in an attempt to uncover insights into the key determining factors of Sudoku puzzle difficulty.
 More specifically, we will be taking a closer look at how the number of missing values, the values of the digits themselves, and the structure of such values affect the difficulty of the Sudoku puzzles.
 
 # Methods
+
+### Clues Distribution
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 First, we will look at the distribution of the number of clues.
@@ -49,6 +54,8 @@ From Figure 1, we can see that the number of clues is somewhat normally distribu
 The vast majority of clues are between 23 and 26.
 
 ![Clues Distribution](./images/clues_distribution.png)
+
+### Difficulty Distribution
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 Next, we look at the distribution of difficulties.
@@ -58,6 +65,8 @@ We decided to reduce this discrepancy by randomly sampling 100,000 of the 1,000,
 Though after the reduction, the difficulty distribution is still rather right skewed as seen in Figure 2.
 
 ![Difficulty Distribution after Sampling](./images/difficulty_distribution_after_reduction.png)
+
+### Difficulty-Clues Relationship with Linear Regression and Random Forests
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 Next, we attempt to uncover the relationship between the number of clues and difficulty.
@@ -72,6 +81,8 @@ As expected, we were unable to fit such models and resulted in R squared values 
 Thus, it is highly likely that the number of clues alone is not a good predictive independent variable for the dependent difficulty variable.
 
 ![Difficulty vs Clues](./images/difficulty_vs_clues.png)
+
+### Puzzle-Clues Relationship with Vanilla and Convolutional Neural Networks
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 Next, we try to use neural networks to find correlations between the puzzle itself and the difficulty.
