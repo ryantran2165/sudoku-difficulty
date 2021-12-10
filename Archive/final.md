@@ -148,4 +148,15 @@ Unfortunately there was no direct keggle example to compare our experiments agai
 
 # Conclusion
 
+&nbsp;&nbsp;&nbsp;&nbsp;
+In this paper we try to find patterns affecting the difficulty of solving a sudoku puzzle. We have used a pre-built dataset of 3 million entries which included the puzzle, solution, # of clues and it’s difficulty.
+
+First we find different distributions in the puzzle like empty spaces distribution and clue distribution and find that they followed a normal distribution.
+
+We then try finding the relationship between clues and difficulty using different models like linear regression and random forest thinking it would turn out to be a linear relationship. However, the relationship turns out to be non-linear. The difficulty increases with the number of clues and peaks at a particular point before decreasing again.
+
+We then turn to neural networks hoping to find the correlation between clues and difficulty. Unfortunately, even after trying different types of neural network models like Vanilla NN, CNN and even two layer CNN we couldn’t establish a relationship between the said fields.
+
+In the end, we conclude that either there’s no such relationship between clues and difficulty or it would require more sophistication on the implementation side of the models to find a better relationship.
+
 # References
