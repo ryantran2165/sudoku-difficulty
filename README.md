@@ -1,3 +1,13 @@
+# Running the Notebook
+
+The notebook requires the following libraries:
+- numpy
+- pandas
+- seaborn
+- matplotlib
+- sklearn
+- tensorflow
+
 # Sudoku Difficulty
 
 ## Team 9  
