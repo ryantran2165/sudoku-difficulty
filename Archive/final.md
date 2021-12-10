@@ -174,7 +174,7 @@ We then tried finding a relationship between clues and difficulty using linear r
 Next, we attempted to find a relationship between the puzzles themselves and its difficulty using vanilla and convolutional neural networks, but we again achieved R squared values of near zero.
 Ultimately, none of our machine learning models were able to establish a strong relationship between the number of clues, the puzzle, and its difficulty.
 In the end, we conclude that our initial problem statement may have been stacked the odds against us from the beginning, as it seems machine learning models are not as well equipped to handle the complex relationship between Sudoku puzzles and their difficulties than traditional algorithms.
-Even though we did not produce the results we expected or desired, we were still able to apply a variety of data mining and machine learning techniques to make various conclusions, so that experiment still yielded some positive results.
+Even though we did not produce the results we expected or desired, we were still able to apply a variety of data mining and machine learning techniques to make various conclusions, so the experiment still yielded some positive results.
 The source code for this paper can be found here: https://github.com/ryantran2165/sudoku-difficulty.
 
 # References
