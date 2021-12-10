@@ -19,7 +19,7 @@ header-includes: |
 This paper attempts to analyze the key factors that contribute to the difficulty of Sudoku puzzles using data mining and machine learning techniques.
 Understanding the contributing factors to Sudoku difficulty may lead to a deeper knowledge and understanding of other similar puzzles that may be applied to the real world in the future.
 We applied a variety of machine learning techniques, but unfortunately, as is often the case in real-world problems, our experiments did not produce the results we desired.
-We found that data mining and machine learning techniques were unable to uncover the complex relationship between the puzzles and their difficulties and that this task is better suited for traditional, sudoku-specific algorithms.
+We found that data mining and machine learning techniques were unable to uncover the complex relationship between the puzzles and their difficulties and that this task is better suited for traditional, Sudoku-specific algorithms.
 The source code for this paper can be found here: https://github.com/ryantran2165/sudoku-difficulty.
 
 # Introduction
@@ -43,6 +43,13 @@ For this dataset, the difficulty was calculated based on the average depth of se
 &nbsp;&nbsp;&nbsp;&nbsp;
 In this paper, we will utilize a variety of statistical methods from statistics, data mining, and machine learning in an attempt to uncover insights into the key determining factors of Sudoku puzzle difficulty.
 More specifically, we will be taking a closer look at how the number of missing values, the values of the digits themselves, and the structure of such values affect the difficulty of the Sudoku puzzles.
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Related works include some public Kaggle notebooks and datasets, but none of them attempt to address the same questions about puzzle difficulty as proposed in this paper.
+Such notebooks and datasets focused on data exploration and applying machine learning models to solve the sudoku puzzle itself rather draw conclusions about the puzzle difficulty.
+The most related academic paper is "Difficulty Rating of Sudoku Puzzles: An Overview and Evaluation" by Radek Pelanek [@ref1].
+In this paper, Pelanek discusses what contributes to Sudoku difficulty, but approaches the problem using traditional algorithms rather than through data mining or machine learning as we do.
+We were unable to find any other related works that attempt to use machine learning to answer our proposed questions.
 
 # Methods
 
@@ -138,7 +145,11 @@ This could very well be the case because from our exploratory data analysis, the
 ### The Missing Insight
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-It turns out that the number of clues has very little to do with the difficulty of Sudoku puzzles, and the true key factors are the number of steps required and the technique difficulty of those steps [@ref1]. There are several common techniques to solve Sudoku puzzles, with technique complexity varying greatly from the most basic Open Singles technique to the extremely complicated Swordfish technique. The basic Open Singles technique, as seen in Figure 4, simply looks for a row, column, or block with a single remaining cell and only one option remaining. The advanced Swordfish technique, as seen in Figure 5, comprises of complex deductive reasoning logic and requires attention across multiple blocks. Knowing that techniques as complicated as Swordfish are required to solve certain puzzles, it is no longer surprising that our machine learning models struggled to find a relationship between the puzzle and its difficulty given just the number of clues or the raw puzzle alone.
+It turns out that the number of clues has very little to do with the difficulty of Sudoku puzzles, and the true key factors are the number of steps required and the technique difficulty of those steps [@ref2].
+There are several common techniques to solve Sudoku puzzles, with technique complexity varying greatly from the most basic Open Singles technique to the extremely complicated Swordfish technique.
+The basic Open Singles technique, as seen in Figure 4, simply looks for a row, column, or block with a single remaining cell and only one option remaining.
+The advanced Swordfish technique, as seen in Figure 5, comprises of complex deductive reasoning logic and requires attention across multiple blocks.
+Knowing that techniques as complicated as Swordfish are required to solve certain puzzles, it is no longer surprising that our machine learning models struggled to find a relationship between the puzzle and its difficulty given just the number of clues or the raw puzzle alone.
 
 ![Open Singles Technique](./images/open_singles.png)
 
@@ -147,19 +158,23 @@ It turns out that the number of clues has very little to do with the difficulty 
 # Comparisons
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Unfortunately there was no direct keggle example to compare our experiments against with the same goals. Most related notebooks, of which there were only two, focused on data exploration and solving the sudoku problems rather than tackling the problem of correlating difficulty to each puzzle. The notebooks available for comparison with the same dataset were also partially complete. Stated above are the methods we used to conduct our experiments.
+There were no Kaggle notebooks or related works to compare our experiments against because none of them had the same goal as us.
+The related notebooks, of which there were only two, focused on data exploration and solving the Sudoku puzzles rather than tackling the problem of correlating difficulty to each puzzle.
+The notebooks available for comparison with the same dataset were also only partially complete.
+Other academic articles and papers also did not have the same goal as us and focused on applying traditional algorithms rather than applying data mining and machine learning techniques.
+As for the various machine learning algorithms that we used to analyze our data and conduct our experiments, we have already discussed above.
 
 # Conclusion
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-In this paper we try to find patterns affecting the difficulty of solving a sudoku puzzle. We have used a pre-built dataset of 3 million entries which included the puzzle, solution, # of clues and it’s difficulty.
-
-First we find different distributions in the puzzle like empty spaces distribution and clue distribution and find that they followed a normal distribution.
-
-We then try finding the relationship between clues and difficulty using different models like linear regression and random forest thinking it would turn out to be a linear relationship. However, the relationship turns out to be non-linear. The difficulty increases with the number of clues and peaks at a particular point before decreasing again.
-
-We then turn to neural networks hoping to find the correlation between clues and difficulty. Unfortunately, even after trying different types of neural network models like Vanilla NN, CNN and even two layer CNN we couldn’t establish a relationship between the said fields.
-
-In the end, we conclude that either there’s no such relationship between clues and difficulty or it would require more sophistication on the implementation side of the models to find a better relationship.
+In this paper we tried to find the patterns that affect the difficulty of solving Sudoku puzzles.
+We used a pre-built dataset of three million entries, which included the puzzle, its solution, the number of clues, and its difficulty.
+First, we analyzed the distributions of the number of clues and the difficulties and found through visualizing graphs that a relationship between the two would be difficult to uncover.
+We then tried finding a relationship between clues and difficulty using linear regression and random forest models, but the R squared value we achieved was near zero.
+Next, we attempted to find a relationship between the puzzles themselves and its difficulty using vanilla and convolutional neural networks, but we again achieved R squared values of near zero.
+Ultimately, none of our machine learning models were able to establish a strong relationship between the number of clues, the puzzle, and its difficulty.
+In the end, we conclude that our initial problem statement may have been stacked the odds against us from the beginning, as it seems machine learning models are not as well equipped to handle the complex relationship between Sudoku puzzles and their difficulties than traditional algorithms.
+Even though we did not produce the results we expected or desired, we were still able to apply a variety of data mining and machine learning techniques to make various conclusions, so that experiment still yielded some positive results.
+The source code for this paper can be found here: https://github.com/ryantran2165/sudoku-difficulty.
 
 # References
